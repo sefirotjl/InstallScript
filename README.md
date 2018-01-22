@@ -8,7 +8,7 @@ This script can be safely used in a multi-odoo code base server because the defa
 
 ##### 1. Download the script:
 ```
-sudo wget https://raw.githubusercontent.com/Yenthe666/InstallScript/11.0/odoo_install.sh
+sudo wget https://github.com/sefirotjl/InstallScript/blob/11.0/odoo_install.sh
 ```
 ##### 2. Modify the parameters as you wish.
 There are a few things you can configure, this is the most used list:<br/>
@@ -18,6 +18,9 @@ There are a few things you can configure, this is the most used list:<br/>
 ```OE_VERSION``` is the Odoo version to install, for example ```11.0``` for Odoo V11.<br/>
 ```IS_ENTERPRISE``` will install the Enterprise version on top of ```11.0``` if you set it to ```True```, set it to ```False``` if you want the community version of Odoo 11.<br/>
 ```OE_SUPERADMIN``` is the master password for this Odoo installation.<br/>
+```DB_USER``` is the admin user for the Postgres installation.<br/>
+```DB_PASSWORD``` password for the admin user for the DB.<br/>
+```DB_HOST``` host to connect to the DB.<br/>
 
 #### 3. Make the script executable
 ```
