@@ -32,6 +32,10 @@ IS_ENTERPRISE="False"
 #set the superadmin password
 OE_SUPERADMIN="admin"
 OE_CONFIG="${OE_USER}-server"
+#set the PostgreSQL configuration
+DB_USER="CHANGE-ME"
+DB_PASSWORD="CHANGE-ME"
+DB_HOST="CHANGE-ME"
 
 ##
 ###  WKHTMLTOPDF download links
@@ -51,11 +55,11 @@ sudo apt-get upgrade -y
 #--------------------------------------------------
 # Install PostgreSQL Server
 #--------------------------------------------------
-echo -e "\n---- Install PostgreSQL Server ----"
-sudo apt-get install postgresql -y
+#echo -e "\n---- Install PostgreSQL Server ----"
+#sudo apt-get install postgresql -y
 
-echo -e "\n---- Creating the ODOO PostgreSQL User  ----"
-sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
+#echo -e "\n---- Creating the ODOO PostgreSQL User  ----"
+#sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
 
 #--------------------------------------------------
 # Install Dependencies
@@ -151,6 +155,9 @@ echo -e "* Create server config file"
 sudo touch /etc/${OE_CONFIG}.conf
 echo -e "* Creating server config file"
 sudo su root -c "printf '[options] \n; This is the password that allows database operations:\n' >> /etc/${OE_CONFIG}.conf"
+sudo su root -c "printf 'db_user = ${DB_USER}\n' >> /etc/${OE_CONFIG}.conf"
+sudo su root -c "printf 'db_password = ${DB_PASSWORD}\n' >> /etc/${OE_CONFIG}.conf"
+sudo su root -c "printf 'db_host = ${DB_HOST}\n' >> /etc/${OE_CONFIG}.conf"
 sudo su root -c "printf 'admin_passwd = ${OE_SUPERADMIN}\n' >> /etc/${OE_CONFIG}.conf"
 sudo su root -c "printf 'xmlrpc_port = ${OE_PORT}\n' >> /etc/${OE_CONFIG}.conf"
 sudo su root -c "printf 'logfile = /var/log/${OE_USER}/${OE_CONFIG}\n' >> /etc/${OE_CONFIG}.conf"
