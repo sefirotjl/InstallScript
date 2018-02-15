@@ -45,7 +45,7 @@ wget https://dl.eff.org/certbot-auto
 sudo chmod a+x ./certbot-auto
 sudo ./certbot-auto --nginx -d [Public Domain Name]
 ```
-##### 6. Configure Https Redirection:
+##### 7. Configure Https Redirection:
 
 https://www.odoo.com/documentation/11.0/setup/deploy.html#https
 
