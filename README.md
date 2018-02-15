@@ -29,6 +29,13 @@ sudo chmod +x odoo_install.sh
 ##### 4. Execute the script:
 ```
 sudo ./odoo_install.sh
+service odoo-server status
+service odoo-server start
+```
+##### 5. Install Nginx:
+```
+sudo apt-get install nginx
+sudo service nginx start
 ```
 ##### 6. Certbot-Auto
 
