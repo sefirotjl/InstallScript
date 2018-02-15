@@ -37,7 +37,7 @@ service odoo-server start
 sudo apt-get install nginx
 sudo service nginx start
 ```
-##### 6. Certbot-Auto
+##### 6. Configure Certificates:
 
 The certbot-auto wrapper script installs Certbot, obtaining some dependencies from your web server OS and putting others in a python virtual environment. You can download and run it as follows:
 ```
@@ -45,5 +45,7 @@ wget https://dl.eff.org/certbot-auto
 sudo chmod a+x ./certbot-auto
 sudo ./certbot-auto --nginx -d [Public Domain Name]
 ```
+##### 6. Configure Https Redirection:
 
+https://www.odoo.com/documentation/11.0/setup/deploy.html#https
 
