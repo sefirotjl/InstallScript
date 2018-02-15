@@ -30,13 +30,13 @@ sudo chmod +x odoo_install.sh
 ```
 sudo ./odoo_install.sh
 ```
-##### 4. Certbot-Auto
+##### 6. Certbot-Auto
 
 The certbot-auto wrapper script installs Certbot, obtaining some dependencies from your web server OS and putting others in a python virtual environment. You can download and run it as follows:
 ```
 wget https://dl.eff.org/certbot-auto
 sudo chmod a+x ./certbot-auto
-sudo ./certbot-auto --help
+sudo ./certbot-auto --nginx -d [Public Domain Name]
 ```
 
 
